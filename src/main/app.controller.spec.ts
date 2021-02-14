@@ -15,8 +15,10 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should get current server time', () => {
+      expect(appController.today()).toStrictEqual({
+        timestamp: new Date(Date.now()).toLocaleString()
+      });
     });
   });
 });
