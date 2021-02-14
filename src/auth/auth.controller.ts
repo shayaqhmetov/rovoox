@@ -31,7 +31,9 @@ export class AuthController {
                         const db = admin.database();
                         const ref = db.ref(`/users/${user.uid}`);
                         ref.set({
-                            points: 0
+                            points: 0,
+                            played: 0,
+                            registrationDate: new Date(Date.now()).toISOString()
                         });
                     })
                     .catch((error) => {
